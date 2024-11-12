@@ -1,0 +1,37 @@
+CREATE DATABASE library_system;
+
+CREATE TABLE library_system.books (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    is_issued TINYINT(1) NOT NULL DEFAULT 0
+);
+
+CREATE TABLE library_system.members (
+    member_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    contact_number VARCHAR(12) NOT NULL,
+    address_line1 VARCHAR(100) NOT NULL,
+    address_line2 VARCHAR(100)
+);
+
+CREATE TABLE library_system.librarians (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_names VARCHAR(50) NOT NULL,
+    contact_number VARCHAR(11) NOT NULL,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE library_system.issued_books (
+    issue_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_id INT,
+    member_id INT,
+    issue_date DATE,
+    return_date DATE,
+    FOREIGN KEY (book_id) REFERENCES library_system.books(book_id),
+    FOREIGN KEY (member_id) REFERENCES library_system.members(member_id)
+);
+
+INSERT INTO library_system.librarians (full_names,contact_number,username, password) VALUES ("John Moore","0824711208",'admin', 'admin123');
+INSERT INTO library_system.librarians(full_names,contact_number,username, password) VALUES ("Thabo Mosia","07827565435",'admin', 'admin124');
