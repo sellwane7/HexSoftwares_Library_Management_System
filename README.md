@@ -171,6 +171,3 @@ These are the areas planned for improvement:
 ## Author
 
 **Joyce Sellwane Mosia**
-
-- GitHub: [github.com/sellwane7](https://github.com/sellwane7)
-- Portfolio: [sellwane7.github.io/personalportfolio](https://sellwane7.github.io/personalportfolio)
